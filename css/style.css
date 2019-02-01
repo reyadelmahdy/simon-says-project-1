@@ -67,6 +67,7 @@
 }
 
 #smallcircle {
+  background: gray;
   position: absolute;
   border-radius: 50%;
   height: 350px;
