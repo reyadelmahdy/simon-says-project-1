@@ -1,3 +1,10 @@
+#gamename {
+  font-family: impact;
+  position: absolute;
+  font-size: 50px;
+  margin-left: 95px;
+  margin-top: 35px;
+}
 
 #largecircle {
   border-radius: 50%;
