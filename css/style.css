@@ -11,6 +11,7 @@
 }
 
 #section1 {
+  background: darkgreen;
   position: absolute;
   height: 350px;
   width: 350px;
@@ -24,6 +25,7 @@
 }
 
 #section2 {
+  background: darkred;
   position: absolute;
   height: 350px;
   width: 350px;
@@ -37,6 +39,7 @@
 }
 
 #section3 {
+  background: goldenrod;
   position: absolute;
   height: 350px;
   width: 350px;
@@ -50,6 +53,7 @@
 }
 
 #section4 {
+  background: darkblue;
   position: absolute;
   height: 350px;
   width: 350px;
@@ -74,4 +78,3 @@
   margin: -175px 0px 0px -175px;
   box-sizing: border-box;
 }
-
