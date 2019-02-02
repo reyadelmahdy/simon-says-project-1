@@ -7,6 +7,7 @@ let intervalId;
 let compTurn;
 let playerOrder = [];
 let success;
+let mode = false;
 
 const onButton = document.querySelector("#on");
 const levelCounter = document.querySelector("#level");
@@ -15,6 +16,15 @@ const greenSection = document.querySelector("#greensection");
 const redSection = document.querySelector("#redsection");
 const yellowSection = document.querySelector("#yellowsection");
 const blueSection = document.querySelector("#bluesection");
+const modeButton = document.querySelector("#mode");
+
+modeButton.addEventListener('click', (event) => {
+  if (modeButton.checked == true) {
+    mode = true;
+  } else {
+    mode = false;
+  }
+});
 
 onButton.addEventListener('click', (event) => {
   if (onButton.checked == true) {
@@ -22,6 +32,8 @@ onButton.addEventListener('click', (event) => {
   } else {
     on = false;
     levelCounter.innerHTML = "";
+    darkColor();
+    clearInterval(intervalId);
   }
 });
 
@@ -44,8 +56,6 @@ function play() {
     order.push(Math.floor(Math.random() * 4) + 1); 
   }
   
-  console.log(order);
-  console.log(playerOrder);
   compTurn = true;
 
   intervalId = setInterval(gameTurn, 800);
@@ -163,7 +173,7 @@ function check() {
     winGame(); //sets the win condition for the game
   }
 
-//States what happens when you fail a level, the turn counter willl print ERR! and reset the level
+//States what happens when you fail a level, the turn counter will print ERR! and reset the level
   if (success == false) {
     lightColor();
     levelCounter.innerHTML = "ERR!";
@@ -171,6 +181,15 @@ function check() {
       levelCounter.innerHTML = level;
       darkColor();
       //States the conditon for 'Hard' mode and the game will restart on failure
+      if (mode) {
+        play();
+      } else {
+        compTurn = true;
+        light = 0;
+        playerOrder = [];
+        success = true;
+        intervalId = setInterval(gameTurn, 800);
+      }
     }, 800);
   }
   
