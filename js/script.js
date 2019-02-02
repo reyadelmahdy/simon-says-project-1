@@ -5,6 +5,8 @@ let level;
 let light;
 let intervalId;
 let compTurn;
+let playerOrder = [];
+let success;
 
 const onButton = document.querySelector("#on");
 const levelCounter = document.querySelector("#level");
@@ -32,15 +34,18 @@ gameStart.addEventListener('click', (event) => {
 function play() {
   win = false;
   order = [];
+  playerOrder = [];
   light = 0;
   intervalId = 0;
   level = 1;
   levelCounter.innerHTML = 1;
+  success = true;
   for (var i = 0; i < 20; i++) {
     order.push(Math.floor(Math.random() * 4) + 1); 
   }
   
   console.log(order);
+  console.log(playerOrder);
   compTurn = true;
 
   intervalId = setInterval(gameTurn, 800);
@@ -96,4 +101,95 @@ function lightColor() {
   redSection.style.backgroundColor = "tomato";
   yellowSection.style.backgroundColor = "lightyellow";
   blueSection.style.backgroundColor = "lightskyblue";
+}
+
+greenSection.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(1);
+    check();
+    green();
+    if(!win) {
+      setTimeout(() => {
+        darkColor();
+      }, 300);
+    }
+  }
+});
+
+redSection.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(2);
+    check();
+    red();
+    if(!win) {
+      setTimeout(() => {
+        darkColor();
+      }, 300);
+    }
+  }
+});
+
+yellowSection.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(3);
+    check();
+    yellow();
+    if(!win) {
+      setTimeout(() => {
+        darkColor();
+      }, 300);
+    }
+  }
+});
+
+blueSection.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(4);
+    check();
+    blue();
+    if(!win) {
+      setTimeout(() => {
+        darkColor();
+      }, 300);
+    }
+  }
+});
+
+function check() {
+  if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
+    success = false;
+
+  if (playerOrder.length == 20 && success) {
+    winGame(); //sets the win condition for the game
+  }
+
+//States what happens when you fail a level, the turn counter willl print ERR! and reset the level
+  if (success == false) {
+    lightColor();
+    levelCounter.innerHTML = "ERR!";
+    setTimeout(() => {
+      levelCounter.innerHTML = level;
+      darkColor();
+      //States the conditon for 'Hard' mode and the game will restart on failure
+    }, 800);
+  }
+  
+  //keeps increasing the turns based on success and not winning the game yet
+
+  if (level == playerOrder.length && success && !win) {
+    level++;
+    playerOrder = [];
+    compTurn = true;
+    light = 0;
+    levelCounter.innerHTML = level;
+    intervalId = setInterval(gameTurn, 800);
+  }
+
+}
+
+function winGame() {
+  lightColor();
+  levelCounter.innerHTML = "WIN!";
+  on = false;
+  win = true;
 }
