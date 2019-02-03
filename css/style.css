@@ -21,14 +21,14 @@ input[type=checkbox] {
     width: 130px;
     height: 40px;
     background: #333;
-    left: 13px;
+    left: 9px;
     top: 110px;
     border-radius: 50px;
     position: relative;
     font-family: Verdana;
 }
 .powerToggle:before {
-    content: 'On';
+    content: 'ON';
     position: absolute;
     top: 11px;
     left: 15px;
@@ -38,10 +38,10 @@ input[type=checkbox] {
 }
 
 .powerToggle:after {
-    content: 'Off';
+    content: 'OFF';
     position: absolute;
-    top: 11px;
-    left: 90px;
+    top: 10px;
+    left: 85px;
     height: 2px;
     color: #ff0000;
     font-size: 16px;
@@ -54,7 +54,7 @@ input[type=checkbox] {
     border-radius: 50px;
     font-size: 12px;
     text-align: center;
-    transition: all .5s ease;
+    transition: all .3s ease;
     cursor: pointer;
     position: absolute;
     line-height: 27px;
@@ -118,6 +118,7 @@ input[type=checkbox] {
   box-sizing: border-box;  
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  cursor: pointer;
 }
 
 /* Red section of the game, web compatability added*/
@@ -138,6 +139,7 @@ input[type=checkbox] {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  cursor: pointer;
 }
 
 /* Yellow section of the game, web compatability added*/
@@ -158,6 +160,7 @@ input[type=checkbox] {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  cursor: pointer;
 }
 
 /* Blue section of the game, web compatability added*/
@@ -178,6 +181,7 @@ input[type=checkbox] {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  cursor: pointer;
 }
 
 /* Styling for the small cicle in the middle of the game with web compatability*/
@@ -216,16 +220,17 @@ a:hover {
 }
 
 .container {
-	width: 160px;
-	height: 36px;
+	width: 136px;
+	height: 37px;
 	margin: auto;
 	position: relative;
 	border-radius: 6px;
 	overflow: hidden;
 	user-select: none;
 	cursor: pointer;
-	left: 65px;
-	top: 70px;
+	left: 85px;
+	top: 72px;
+	font-family: Verdana;
 }
 
 .inner-container {
@@ -265,4 +270,32 @@ a:hover {
 
 .toggle:nth-child(1) {
 	right: 0;
+}
+
+.btn{
+  position: absolute;
+  background: #333;
+  color: white;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: .4s;
+  font-family: Verdana;
+  font-size: 14px;
+  top: 155px;
+  left: 120px;
+  cursor: pointer;
+}
+
+.btn:active{
+  -ms-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
 }

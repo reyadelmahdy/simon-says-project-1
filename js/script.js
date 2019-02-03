@@ -23,7 +23,7 @@ const greenSection = document.querySelector("#greensection");
 const redSection = document.querySelector("#redsection");
 const yellowSection = document.querySelector("#yellowsection");
 const blueSection = document.querySelector("#bluesection");
-//const modeButton = document.querySelector(".mode");
+const modeButton = document.querySelector(".mode");
 
 //Checks if the mode button is on or off, added a different style to the button to make it clearer
 //also animates the mode difficulty button and ties it to the proper elelments with the HTML
@@ -59,7 +59,7 @@ onButton.addEventListener('click', (event) => {
 //Tracks when the game starts and jumps to the play function
 
 gameStart.addEventListener('click', (event) => {
-  if (on || win) {
+  if (on == true || win) {
     play();
   }
 });
