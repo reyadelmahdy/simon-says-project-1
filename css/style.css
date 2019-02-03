@@ -1,7 +1,9 @@
+/*Link to free to use background image */
 body {
   background: url("../assets/diagonal-squares.png");
 }
 
+/*Styling for the gamename Simon */
 #gamename {
   font-family: impact;
   position: absolute;
@@ -10,10 +12,11 @@ body {
   margin-top: 35px;
 }
 
+/*Code that hides the checkboxes on the custom sliding buttons */
 input[type=checkbox] {
     visibility: hidden;
 }
-
+/* Styling for the powerToggle, background, the words and the label which is given animation*/
 .powerToggle {
     width: 130px;
     height: 50px;
@@ -65,6 +68,8 @@ input[type=checkbox] {
     left: 60px;
     background: #26ca28;
 }
+
+/* Same elements as the powerToggle, edited to the different needs, e.g. words and background colours*/
 
 .modeToggle {
     width: 130px;
@@ -118,6 +123,7 @@ input[type=checkbox] {
     left: 60px;
     background: #ff0000;
 }
+/* styling for the level display and the size of the font within the box*/
 
 #level {
   position: absolute;
@@ -136,6 +142,7 @@ input[type=checkbox] {
   left: 40px;
 }
 
+/*The large outline of the game, a simple circle that then holds every other element */
 #largecircle {
   border-radius: 50%;
   height: 700px;
@@ -146,6 +153,8 @@ input[type=checkbox] {
   margin: auto;
   margin-top: 70px;
 }
+
+/* Green section of the game, web compatability added*/
 
 #greensection {
   background: darkgreen;
@@ -165,6 +174,8 @@ input[type=checkbox] {
   -webkit-box-sizing: border-box;
 }
 
+/* Red section of the game, web compatability added*/
+
 #redsection {
   background: darkred;
   position: absolute;
@@ -182,6 +193,8 @@ input[type=checkbox] {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+
+/* Yellow section of the game, web compatability added*/
 
 #yellowsection {
   background: goldenrod;
@@ -201,6 +214,8 @@ input[type=checkbox] {
   -webkit-box-sizing: border-box;
 }
 
+/* Blue section of the game, web compatability added*/
+
 #bluesection {
   background: darkblue;
   position: absolute;
@@ -218,6 +233,8 @@ input[type=checkbox] {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+
+/* Styling for the small cicle in the middle of the game with web compatability*/
 
 #smallcircle {
   background: gray;
