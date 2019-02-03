@@ -10,6 +10,9 @@ let compTurn; // sets when it is the computers turn or not
 let playerOrder = []; //tracks what the player is doing
 let success; //tracks if the players input was successful
 let mode = false; // detects if hard mode is on or not
+var toggle = document.querySelector('.container');
+var toggleContainer = document.querySelector('#toggle-container');
+var toggleNumber;
 
 //Set of constants that are used to refernce elementns in HTML to add the interactivity to the applciation
 
@@ -20,16 +23,24 @@ const greenSection = document.querySelector("#greensection");
 const redSection = document.querySelector("#redsection");
 const yellowSection = document.querySelector("#yellowsection");
 const blueSection = document.querySelector("#bluesection");
-const modeButton = document.querySelector("#mode");
+//const modeButton = document.querySelector(".mode");
 
-//Checks if the mode button is on or off
+//Checks if the mode button is on or off, added a different style to the button to make it clearer
+//also animates the mode difficulty button and ties it to the proper elelments with the HTML
 
-modeButton.addEventListener('click', (event) => {
-  if (modeButton.checked == true) {
-    mode = true;
-  } else {
-    mode = false;
-  }
+toggle.addEventListener('click', function() {
+	toggleNumber = !toggleNumber;
+	if (toggleNumber) {
+		toggleContainer.style.clipPath = 'inset(0 0 0 50%)';
+		toggleContainer.style.backgroundColor = '#FF0000';
+		mode = true;
+	} else {
+		toggleContainer.style.clipPath = 'inset(0 50% 0 0)';
+		toggleContainer.style.backgroundColor = '#26CA28';
+		mode = false;
+	}
+	console.log(toggleNumber);
+	console.log(mode);
 });
 
 //Checks that the on button is on otherwise the game will be blank and notthing will be able to be interacted with
@@ -244,3 +255,4 @@ function winGame() {
   on = false;
   win = true;
 }
+

@@ -19,9 +19,9 @@ input[type=checkbox] {
 /* Styling for the powerToggle, background, the words and the label which is given animation*/
 .powerToggle {
     width: 130px;
-    height: 50px;
+    height: 40px;
     background: #333;
-    left: 100px;
+    left: 13px;
     top: 110px;
     border-radius: 50px;
     position: relative;
@@ -30,7 +30,7 @@ input[type=checkbox] {
 .powerToggle:before {
     content: 'On';
     position: absolute;
-    top: 14px;
+    top: 11px;
     left: 15px;
     height: 2px;
     color: #26ca28;
@@ -40,8 +40,8 @@ input[type=checkbox] {
 .powerToggle:after {
     content: 'Off';
     position: absolute;
-    top: 14px;
-    left: 80px;
+    top: 11px;
+    left: 90px;
     height: 2px;
     color: #ff0000;
     font-size: 16px;
@@ -57,8 +57,8 @@ input[type=checkbox] {
     transition: all .5s ease;
     cursor: pointer;
     position: absolute;
-    line-height: 24px;
-    top: 9px;
+    line-height: 27px;
+    top: 6px;
     z-index: 1;
     left: 12px;
     background: #ff0000;
@@ -69,60 +69,6 @@ input[type=checkbox] {
     background: #26ca28;
 }
 
-/* Same elements as the powerToggle, edited to the different needs, e.g. words and background colours*/
-
-.modeToggle {
-    width: 130px;
-    height: 50px;
-    background: #333;
-    left: 100px;
-    top: 120px;
-    border-radius: 50px;
-    position: relative;
-    font-family: Verdana;
-}
-
-.modeToggle:before {
-    content: 'Easy';
-    position: absolute;
-    top: 14px;
-    left: 15px;
-    height: 2px;
-    color: #26ca28;
-    font-size: 16px;
-}
-
-.modeToggle:after {
-    content: 'Hard';
-    position: absolute;
-    top: 14px;
-    left: 80px;
-    height: 2px;
-    color: #ff0000;
-    font-size: 16px;
-}
-
-.modeToggle label {
-    display: block;
-    width: 60px;
-    height: 27px;
-    border-radius: 50px;
-    font-size: 12px;
-    text-align: center;
-    transition: all .5s ease;
-    cursor: pointer;
-    position: absolute;
-    line-height: 24px;
-    top: 9px;
-    z-index: 1;
-    left: 12px;
-    background: #26ca28;
-}
-
-.modeToggle input[type=checkbox]:checked + label {
-    left: 60px;
-    background: #ff0000;
-}
 /* styling for the level display and the size of the font within the box*/
 
 #level {
@@ -250,4 +196,73 @@ input[type=checkbox] {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+
+/* Styling for the other slide button make it clearer when usign the game */
+
+a {
+	text-decoration: none;
+	opacity: .6;
+	padding: 60px;
+	font-weight: bolder;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	font-size: 1.4em;
+}
+
+a:hover {
+	opacity: 1;
+}
+
+.container {
+	width: 160px;
+	height: 36px;
+	margin: auto;
+	position: relative;
+	border-radius: 6px;
+	overflow: hidden;
+	user-select: none;
+	cursor: pointer;
+	left: 65px;
+	top: 70px;
+}
+
+.inner-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: inherit;
+	height: inherit;
+	text-transform: uppercase;
+	font-size: .6em;
+	letter-spacing: .2em;
+}
+
+.inner-container:first-child {
+	background: #333;
+	color: #a9a9a9;
+}
+
+.inner-container:nth-child(2) {
+	background: #26ca28;
+	color: white;
+	clip-path: inset(0 50% 0 0);
+	transition: .3s cubic-bezier(0,0,0,1);
+}
+
+.toggle {
+	width: 50%;
+	position: absolute;
+	height: inherit;
+	display: flex;
+	box-sizing: border-box;
+}
+
+.toggle p {
+	margin: auto;
+}
+
+.toggle:nth-child(1) {
+	right: 0;
 }

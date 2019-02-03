@@ -25,14 +25,29 @@
             <label for="on">Power</label>
           </div>
         </section>
-        <section>
-            <div class="modeToggle">
-              <input type="checkbox" id="mode" name="" />
-              <label for="mode">Mode</label>
-            </div>
-          </section>
+        <!-- Added in new button style and tied it to the difficulty-->
+        <section class = "mode">
+          <div class="container mode">
+	          <div class="inner-container mode">
+		          <div class="toggle mode">
+			          <p>Hard</p>
+		          </div>
+		          <div class="toggle mode">
+			          <p>Easy</p>
+		          </div>
+	          </div>
+	          <div class="inner-container mode" id='toggle-container'>
+		          <div class="toggle mode">
+			          <p>Hard</p>
+		          </div>
+		          <div class="toggle mode">
+			          <p>Easy</p>
+		          </div>
+	          </div>
+          </div>
+        </section>
           <!-- Display for the level the player is currently on -->
-          <div id="level"></div>
+        <div id="level"></div>
       </div>
     </div>
   </body>
