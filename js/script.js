@@ -1,13 +1,17 @@
-let on = false;
-let win;
-let order = [];
-let level;
-let light;
-let intervalId;
-let compTurn;
-let playerOrder = [];
-let success;
-let mode = false;
+// Sets the variable refecrenced within the game
+
+let on = false; //Detects on or off
+let win; // checks the win condtons has been met or not
+let order = [];//where the computers turns are stored
+let level; // Track the current level so it can be displayed
+let light; // tracks which section should light up in response to the numbeer generated
+let intervalId; //sets thei nterval between colours flashing
+let compTurn; // sets when it is the computers turn or not
+let playerOrder = []; //tracks what the player is doing
+let success; //tracks if the players input was successful
+let mode = false; // detects if hard mode is on or not
+
+//Set of constants that are used to refernce elementns in HTML to add the interactivity to the applciation
 
 const onButton = document.querySelector("#on");
 const levelCounter = document.querySelector("#level");
@@ -18,6 +22,8 @@ const yellowSection = document.querySelector("#yellowsection");
 const blueSection = document.querySelector("#bluesection");
 const modeButton = document.querySelector("#mode");
 
+//Checks if the mode button is on or off
+
 modeButton.addEventListener('click', (event) => {
   if (modeButton.checked == true) {
     mode = true;
@@ -25,6 +31,8 @@ modeButton.addEventListener('click', (event) => {
     mode = false;
   }
 });
+
+//Checks that the on button is on otherwise the game will be blank and notthing will be able to be interacted with
 
 onButton.addEventListener('click', (event) => {
   if (onButton.checked == true) {
@@ -37,11 +45,15 @@ onButton.addEventListener('click', (event) => {
   }
 });
 
+//Tracks when the game starts and jumps to the play function
+
 gameStart.addEventListener('click', (event) => {
   if (on || win) {
     play();
   }
 });
+
+//Play controller that runs through an algorithm to show the computers turn. It also displays the level and logs the players response
 
 function play() {
   win = false;
@@ -61,6 +73,8 @@ function play() {
   intervalId = setInterval(gameTurn, 800);
 }
 
+//Control for when it will be the players turn and when it is the computers turn
+
 function gameTurn() {
   on = false;
 
@@ -70,7 +84,7 @@ function gameTurn() {
     darkColor();
     on = true;
   }
-//aligns the numbers 1-4 with the different segments and calls the function to light the correct sequence of colours
+//aligns the numbers 1-4 with the different segments and calls the function to light the correct sequence of colours for the computer
   if (compTurn) {
     darkColor();
     setTimeout(() => {
@@ -82,6 +96,8 @@ function gameTurn() {
     }, 200);
   }
 }
+
+//sets the functions that willl be called in response to the numbers in the order array
 
 function green() {
   greenSection.style.backgroundColor = "lightgreen";
@@ -99,6 +115,8 @@ function blue() {
   blueSection.style.backgroundColor = "lightskyblue";
 }
 
+//Colours when the sections have not been clicked
+
 function darkColor() {
   greenSection.style.backgroundColor = "darkgreen";
   redSection.style.backgroundColor = "darkred";
@@ -106,12 +124,16 @@ function darkColor() {
   blueSection.style.backgroundColor = "darkblue";
 }
 
+//when the sections have ben clicked
+
 function lightColor() {
   greenSection.style.backgroundColor = "lightgreen";
   redSection.style.backgroundColor = "tomato";
   yellowSection.style.backgroundColor = "lightyellow";
   blueSection.style.backgroundColor = "lightskyblue";
 }
+
+//Tracks when the player has clicked the greensection
 
 greenSection.addEventListener('click', (event) => {
   if (on) {
@@ -126,6 +148,8 @@ greenSection.addEventListener('click', (event) => {
   }
 });
 
+//Tracks when the player has clicked the redsection
+
 redSection.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(2);
@@ -138,6 +162,8 @@ redSection.addEventListener('click', (event) => {
     }
   }
 });
+
+//Tracks when the player has clicked the yellowsection
 
 yellowSection.addEventListener('click', (event) => {
   if (on) {
@@ -152,6 +178,8 @@ yellowSection.addEventListener('click', (event) => {
   }
 });
 
+//Tracks when the player has clicked the bluesection
+
 blueSection.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(4);
@@ -164,6 +192,8 @@ blueSection.addEventListener('click', (event) => {
     }
   }
 });
+
+//Fucntion to check the game should still be running and checks player fail state
 
 function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
@@ -205,6 +235,8 @@ function check() {
   }
 
 }
+
+//What happens when the game has been completed
 
 function winGame() {
   lightColor();
