@@ -2,18 +2,23 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <!-- Code to help display the application on mobile devics -->
     <meta name="viewport" content="width=1000, user-scalable=0" />
     <title>Simon Says Game</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <!--Black outline for the game -->
     <div id="largecircle">
+      <!--four sections the split the largecirlce into the different couloured sections that will interact with the players turn -->
       <div id="greensection"></div>
       <div id="redsection"></div>
       <div id="yellowsection"></div>
       <div id="bluesection"></div>
+      <!-- Small circle in the middle that holds the control elements, helps the sections have the curved effect seen on the original game -->
       <div id="smallcircle">
         <div id="gamename">SIMON!</div>
+        <!--The slide buttons are sectioned off  to make them easier to move to the correct area of the game -->
         <section>
           <div class="powerToggle start">
             <input type="checkbox" id="on"/>
@@ -26,6 +31,7 @@
               <label for="mode">Mode</label>
             </div>
           </section>
+          <!-- Display for the level the player is currently on -->
           <div id="level"></div>
       </div>
     </div>
