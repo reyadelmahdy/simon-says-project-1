@@ -1,6 +1,7 @@
 /*Link to free to use background image */
 body {
-  background: url("../assets/Black_concrete.jpg"); /*https://unsplash.com/photos/G96NYl4KJBc */
+  background-image: url("../assets/Black_concrete.jpg"); /*https://unsplash.com/photos/G96NYl4KJBc */
+  background-repeat: no-repeat;
 }
 
 /*Styling for the gamename Simon */
@@ -253,9 +254,9 @@ a:hover {
 	background: #26ca28;
 	color: white;
 	clip-path: inset(0 50% 0 0);
+	-webkit-clip-path: inset(0 50% 0 0);
 	transition: .3s cubic-bezier(0,0,0,1);
-	-webkit-transition: .3s cubic-bezier(0,0,0,1);
-	-moz-transform: .3s cubic-bezier(0,0,0,1);
+
 }
 
 .toggle {
