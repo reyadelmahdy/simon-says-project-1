@@ -254,6 +254,8 @@ a:hover {
 	color: white;
 	clip-path: inset(0 50% 0 0);
 	transition: .3s cubic-bezier(0,0,0,1);
+	-webkit-transition: .3s cubic-bezier(0,0,0,1);
+	-moz-transform: .3s cubic-bezier(0,0,0,1);
 }
 
 .toggle {
