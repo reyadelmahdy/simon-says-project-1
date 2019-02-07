@@ -5,7 +5,7 @@ let win; // checks the win condtons has been met or not
 let order = [];//where the computers turns are stored
 let level; // Track the current level so it can be displayed
 let light; // tracks which section should light up in response to the numbeer generated
-let intervalId; //sets thei nterval between colours flashing
+let intervalId; //sets the interval between colours flashing
 let compTurn; // sets when it is the computers turn or not
 let playerOrder = []; //tracks what the player is doing
 let success; //tracks if the players input was successful
