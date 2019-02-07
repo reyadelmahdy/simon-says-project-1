@@ -39,8 +39,6 @@ toggle.addEventListener('click', function() {
 		toggleContainer.style.backgroundColor = '#26CA28';
 		mode = false;
 	}
-	console.log(toggleNumber);
-	console.log(mode);
 });
 
 //Checks that the on button is on otherwise the game will be blank and notthing will be able to be interacted with
@@ -53,6 +51,8 @@ onButton.addEventListener('click', (event) => {
     levelCounter.innerHTML = "";
     darkColor();
     clearInterval(intervalId);
+    gameStart.removeAttribute("disabled");
+    location.reload();
   }
 });
 
@@ -60,6 +60,7 @@ onButton.addEventListener('click', (event) => {
 
 gameStart.addEventListener('click', (event) => {
   if (on == true || win) {
+    gameStart.setAttribute("disabled", "disabled");
     play();
   }
 });
@@ -221,6 +222,7 @@ function check() {
     setTimeout(() => {
       levelCounter.innerHTML = level;
       darkColor();
+      alert("Well done you made it to level " + level + "! Close this message to try and beat your score!");
       //States the conditon for 'Hard' mode and the game will restart on failure
       if (mode) {
         play();
@@ -231,7 +233,7 @@ function check() {
         success = true;
         intervalId = setInterval(gameTurn, 800);
       }
-    }, 800);
+    }, 1);
   }
   
   //keeps increasing the turns based on success and not winning the game yet
