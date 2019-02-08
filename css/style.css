@@ -1,0 +1,286 @@
+/*Link to free to use background image */
+body {
+  background: url("../assets/Black_concrete.jpg"); /*https://unsplash.com/photos/G96NYl4KJBc */
+  background-repeat: no-repeat;
+}
+
+/*Styling for the gamename Simon */
+#gamename {
+  font-family: impact;
+  position: absolute;
+  font-size: 50px;
+  margin-left: 95px;
+  margin-top: 35px;
+}
+
+/*Code that hides the checkboxes on the custom sliding buttons */
+input[type=checkbox] {
+    visibility: hidden;
+}
+/* Styling for the powerToggle, background, the words and the label which is given animation*/
+.powerToggle {
+    width: 130px;
+    height: 40px;
+    background: #333;
+    left: 9px;
+    top: 110px;
+    border-radius: 50px;
+    position: relative;
+    font-family: Verdana;
+}
+.powerToggle:before {
+    content: 'ON';
+    position: absolute;
+    top: 11px;
+    left: 15px;
+    height: 2px;
+    color: #26ca28;
+    font-size: 16px;
+}
+
+.powerToggle:after {
+    content: 'OFF';
+    position: absolute;
+    top: 10px;
+    left: 85px;
+    height: 2px;
+    color: #ff0000;
+    font-size: 16px;
+}
+
+.powerToggle label {
+    display: block;
+    width: 60px;
+    height: 27px;
+    border-radius: 50px;
+    font-size: 12px;
+    text-align: center;
+    transition: all .3s ease;
+    cursor: pointer;
+    position: absolute;
+    line-height: 27px;
+    top: 6px;
+    z-index: 1;
+    left: 12px;
+    background: #ff0000;
+}
+
+.powerToggle input[type=checkbox]:checked + label {
+    left: 60px;
+    background: #26ca28;
+}
+
+/*Styling for difficulty mode slider */
+
+.modeToggle {
+    width: 130px;
+    height: 40px;
+    background: #333;
+    left: 171px;
+    top: 70px;
+    border-radius: 50px;
+    position: relative;
+    font-family: Verdana;
+}
+
+.modeToggle:before {
+    content: 'HARD';
+    position: absolute;
+    top: 11px;
+    left: 13px;
+    height: 2px;
+    color: #ff0000;
+    font-size: 16px;
+}
+
+.modeToggle:after {
+    content: 'EASY';
+    position: absolute;
+    top: 10px;
+    left: 76px;
+    height: 2px;
+    color: #26ca28;
+    font-size: 16px;
+}
+
+.modeToggle label {
+    display: block;
+    width: 60px;
+    height: 27px;
+    border-radius: 50px;
+    font-size: 12px;
+    text-align: center;
+    transition: all .3s ease;
+    cursor: pointer;
+    position: absolute;
+    line-height: 25px;
+    top: 6px;
+    z-index: 1;
+    left: 12px;
+    background: #26ca28;
+}
+
+.modeToggle input[type=checkbox]:checked + label {
+    left: 60px;
+    background: #ff0000;
+}
+/* Styling for the other slide button make it clearer when using the game */
+
+#level {
+  position: absolute;
+  background: #000;
+  color: #e61010;
+  font-family: impact;
+  font-size: 25px;
+  height: 45px;
+  width: 65px;
+  margin-left: 88px;
+  margin-top: 143px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  top: 100px;
+  left: 40px;
+}
+
+/*The large outline of the game, a simple circle that then holds every other element */
+#largecircle {
+  border-radius: 50%;
+  height: 700px;
+  width: 700px;
+  position: relative;
+  border-style: solid;
+  border-width: 15px;
+  margin: auto;
+  margin-top: 70px;
+}
+
+/* Green section of the game, web compatability added*/
+
+#greensection {
+  background: darkgreen;
+  position: absolute;
+  height: 350px;
+  width: 350px;
+  border-radius: 350px 0 0 0;
+  -moz-border-radius: 350px 0 0 0;
+  -webkit-border-radius: 350px 0 0 0;
+  top: 50%;
+  left: 50%;
+  margin: -350px 0px 0px -350px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;  
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Red section of the game, web compatability added*/
+
+#redsection {
+  background: darkred;
+  position: absolute;
+  height: 350px;
+  width: 350px;
+  border-radius: 0 350px 0 0;
+  -moz-border-radius: 0 350px 0 0;
+  -webkit-border-radius: 0 350px 0 0;
+  top: 50%;
+  left: 50%;
+  margin: -350px 0px 0px 0px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Yellow section of the game, web compatability added*/
+
+#yellowsection {
+  background: goldenrod;
+  position: absolute;
+  height: 350px;
+  width: 350px;
+  border-radius: 0 0 0 350px;
+  -moz-border-radius: 0 0 0 350px;
+  -webkit-border-radius: 0 0 0 350px;
+  top: 50%;
+  left: 50%;
+  margin: 0px -350px 0px -350px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Blue section of the game, web compatability added*/
+
+#bluesection {
+  background: darkblue;
+  position: absolute;
+  height: 350px;
+  width: 350px;
+  border-radius: 0 0 350px 0;
+  -moz-border-radius: 0 0 350px 0;
+  -webkit-border-radius: 0 0 350px 0;
+  top: 50%;
+  left: 50%;
+  margin: 0px 0px -350px 0px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Styling for the small cicle in the middle of the game with web compatability*/
+
+#smallcircle {
+  background: gray;
+  position: absolute;
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;
+  border-style: solid;
+  border-width: 10px;
+  top: 50%;
+  left: 50%;
+  margin: -175px 0px 0px -175px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.btn{
+  position: absolute;
+  background: #333;
+  color: white;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: .4s;
+  font-family: Verdana;
+  font-size: 14px;
+  top: 155px;
+  left: 120px;
+  cursor: pointer;
+}
+
+.btn:active{
+  -ms-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+}
