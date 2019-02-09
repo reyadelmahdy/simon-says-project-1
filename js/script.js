@@ -1,20 +1,20 @@
-// Sets the variable refecrenced within the game
+// Sets the variables referenced within the game
 
 let on = false; //Detects on or off
-let win; // checks the win condtons has been met or not
-let order = [];//where the computers turns are stored
+let win; // Checks whether the win conditions have been met or not
+let order = [];// Where the computers turns are stored
 let level; // Track the current level so it can be displayed
-let light; // tracks which section should light up in response to the numbeer generated
-let intervalId; //sets the interval between colours flashing
-let compTurn; // sets when it is the computers turn or not
-let playerOrder = []; //tracks what the player is doing
-let success; //tracks if the players input was successful
-let mode = false; // detects if hard mode is on or not
+let light; // Tracks which section should light up in response to the number generated
+let intervalId; // Sets the interval between colours flashing
+let compTurn; // Sets when it is the computers turn or not
+let playerOrder = []; // Tracks what the player is doing
+let success; // Tracks if the players input was successful
+let mode = false; // Detects if hard mode is on or not
 var toggle = document.querySelector('.container');
 var toggleContainer = document.querySelector('#toggle-container');
 var toggleNumber;
 
-//Set of constants that are used to refernce elementns in HTML to add the interactivity to the applciation
+// Set of constants that are used to reference elements in HTML to add the interactivity to the application
 
 const onButton = document.querySelector("#on");
 const levelCounter = document.querySelector("#level");
@@ -25,8 +25,8 @@ const yellowSection = document.querySelector("#yellowsection");
 const blueSection = document.querySelector("#bluesection");
 const modeButton = document.querySelector(".mode");
 
-//Checks if the mode button is on or off, added a different style to the button to make it clearer
-//also animates the mode difficulty button and ties it to the proper elelments with the HTML
+// Checks if the mode button is on or off, added a different style to the button to make it clearer
+// Also animates the mode difficulty button and ties it to the proper elelments with the HTML
 
 toggle.addEventListener('click', function() {
 	toggleNumber = !toggleNumber;
@@ -41,7 +41,7 @@ toggle.addEventListener('click', function() {
 	}
 });
 
-//Checks that the on button is on otherwise the game will be blank and notthing will be able to be interacted with
+// Checks that game is on otherwise the game will be blank and nothing will be able to be interacted with
 
 onButton.addEventListener('click', (event) => {
   if (onButton.checked == true) {
@@ -51,21 +51,21 @@ onButton.addEventListener('click', (event) => {
     levelCounter.innerHTML = "";
     darkColor();
     clearInterval(intervalId);
-    gameStart.removeAttribute("disabled");
-    location.reload();
+    gameStart.removeAttribute("disabled");// Turning the game off will enable the start button again
+    location.reload();// Turning the power off will refresh the browser
   }
 });
 
-//Tracks when the game starts and jumps to the play function
+// Tracks when the game starts and jumps to the play function
 
 gameStart.addEventListener('click', (event) => {
   if (on == true || win) {
-    gameStart.setAttribute("disabled", "disabled");
+    gameStart.setAttribute("disabled", "disabled");// Once the button has been clicked, it will become disabled
     play();
   }
 });
 
-//Play controller that runs through an algorithm to show the computers turn. It also displays the level and logs the players response
+// Play controller that runs through an algorithm to show the computers turn. It also displays the level and logs the players response
 
 function play() {
   win = false;
@@ -85,7 +85,7 @@ function play() {
   intervalId = setInterval(gameTurn, 800);
 }
 
-//Control for when it will be the players turn and when it is the computers turn
+// Control for when it will be the players turn and when it is the computers turn
 
 function gameTurn() {
   on = false;
@@ -96,7 +96,7 @@ function gameTurn() {
     darkColor();
     on = true;
   }
-//aligns the numbers 1-4 with the different segments and calls the function to light the correct sequence of colours for the computer
+// Aligns the numbers 1-4 with the different segments and calls the function to light the correct sequence of colours for the computer
   if (compTurn) {
     darkColor();
     setTimeout(() => {
@@ -109,7 +109,7 @@ function gameTurn() {
   }
 }
 
-//sets the functions that willl be called in response to the numbers in the order array
+// Sets the functions that will be called in response to the numbers in the order array
 
 function green() {
   greenSection.style.backgroundColor = "lightgreen";
@@ -127,7 +127,7 @@ function blue() {
   blueSection.style.backgroundColor = "lightskyblue";
 }
 
-//Colours when the sections have not been clicked
+// Colours when the sections have not been clicked
 
 function darkColor() {
   greenSection.style.backgroundColor = "darkgreen";
@@ -136,7 +136,7 @@ function darkColor() {
   blueSection.style.backgroundColor = "darkblue";
 }
 
-//when the sections have ben clicked
+// When the sections have been clicked
 
 function lightColor() {
   greenSection.style.backgroundColor = "lightgreen";
@@ -145,7 +145,7 @@ function lightColor() {
   blueSection.style.backgroundColor = "lightskyblue";
 }
 
-//Tracks when the player has clicked the greensection
+// Tracks when the player has clicked the greensection
 
 greenSection.addEventListener('click', (event) => {
   if (on) {
@@ -160,7 +160,7 @@ greenSection.addEventListener('click', (event) => {
   }
 });
 
-//Tracks when the player has clicked the redsection
+// Tracks when the player has clicked the redsection
 
 redSection.addEventListener('click', (event) => {
   if (on) {
@@ -175,7 +175,7 @@ redSection.addEventListener('click', (event) => {
   }
 });
 
-//Tracks when the player has clicked the yellowsection
+// Tracks when the player has clicked the yellowsection
 
 yellowSection.addEventListener('click', (event) => {
   if (on) {
@@ -190,7 +190,7 @@ yellowSection.addEventListener('click', (event) => {
   }
 });
 
-//Tracks when the player has clicked the bluesection
+// Tracks when the player has clicked the bluesection
 
 blueSection.addEventListener('click', (event) => {
   if (on) {
@@ -205,25 +205,25 @@ blueSection.addEventListener('click', (event) => {
   }
 });
 
-//Fucntion to check the game should still be running and checks player fail state
+// Function to check the game should still be running and checks player fail state
 
 function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     success = false;
 
   if (playerOrder.length == 20 && success) {
-    winGame(); //sets the win condition for the game
+    winGame(); // Sets the win condition for the game
   }
 
-//States what happens when you fail a level, the turn counter will print ERR! and reset the level
+// States what happens when you fail a level, the turn counter will print ERR! and reset the level
   if (success == false) {
     lightColor();
     levelCounter.innerHTML = "ERR!";
     setTimeout(() => {
       levelCounter.innerHTML = level;
       darkColor();
-      alert("Well done you made it to level " + level + "! Close this message to try and beat your score!");
-      //States the conditon for 'Hard' mode and the game will restart on failure
+      alert("Well done you made it to level " + level + "! Close this message to try and beat your score!");// Alert to freeze browser when the player fails
+      // States the conditon for 'Hard' mode and the game will restart on failure
       if (mode) {
         play();
       } else {
@@ -233,10 +233,10 @@ function check() {
         success = true;
         intervalId = setInterval(gameTurn, 800);
       }
-    }, 1);
+    }, 100); //Interval reduced to prevent player clicking when they shouldn't
   }
   
-  //keeps increasing the turns based on success and not winning the game yet
+  // Keeps increasing the turns based on success and not winning the game
 
   if (level == playerOrder.length && success && !win) {
     level++;
@@ -249,7 +249,7 @@ function check() {
 
 }
 
-//What happens when the game has been completed
+// What happens when the game has been completed
 
 function winGame() {
   lightColor();

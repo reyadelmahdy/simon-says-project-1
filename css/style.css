@@ -185,7 +185,7 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-/* Styling for the small cicle in the middle of the game with web compatability*/
+/* Styling for the small circle in the middle of the game with web compatability*/
 
 #smallcircle {
   background: gray;
@@ -203,7 +203,7 @@ input[type=checkbox] {
   -webkit-box-sizing: border-box;
 }
 
-/* Styling for the other slide button make it clearer when usign the game */
+/* Styling for the other slide button make it clearer when using the game */
 
 a {
 	text-decoration: none;
